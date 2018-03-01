@@ -1,15 +1,13 @@
 //
-//  ViewController.h
+//  ChooseMessageViewController.h
 //  EaseMobSendMessage
 //
 //  Created by yang on 2018/3/1.
 //  Copyright © 2018年 223studio. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "BaseViewController.h"
 
-@interface ViewController : UIViewController
-
+@interface ChooseMessageViewController : BaseViewController
 
 @end
-
