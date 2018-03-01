@@ -8,11 +8,17 @@
 
 #import "ChooseSenderViewController.h"
 #import "ChooseMessageViewController.h"
+#import "ChooseTableViewCell.h"
 
 static NSString *kSenderCellReuseIdentifier = @"senderCellReuseIdentifier";
 
-@interface ChooseSenderViewController ()<UITableViewDelegate,UITableViewDataSource>
+@interface ChooseSenderViewController ()<UITableViewDelegate,UITableViewDataSource> {
+    
+}
 @property (nonatomic,strong) NSArray *senderArr;
+@property (nonatomic,strong) NSMutableArray *selectedIDArr;
+
+
 @end
 
 @implementation ChooseSenderViewController
@@ -33,19 +39,43 @@ static NSString *kSenderCellReuseIdentifier = @"senderCellReuseIdentifier";
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     
-    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:kSenderCellReuseIdentifier];
+    [self.tableView registerClass:[ChooseTableViewCell class] forCellReuseIdentifier:kSenderCellReuseIdentifier];
     
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kSenderCellReuseIdentifier];
+    ChooseTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kSenderCellReuseIdentifier];
     NSString *senderID = self.senderArr[indexPath.row];
-    cell.textLabel.text = senderID;
+    
+    if([self.selectedIDArr containsObject:senderID]){
+        cell.status = ARICellSelected;
+    }else {
+        cell.status = ARICellunSelected;
+    }
+    
+    cell.contentLab.text = senderID;
     return cell;
+}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    ChooseTableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    NSString *senderID = self.senderArr[indexPath.row];
+
+    if([self.selectedIDArr containsObject:senderID]){
+        cell.status = ARICellunSelected;
+        [self.selectedIDArr removeObject:senderID];
+    }else {
+        cell.status = ARICellSelected;
+        [self.selectedIDArr addObject:senderID];
+    }
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return self.senderArr.count;
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 50;
 }
 - (void)nextStep:(id)sender {
     
@@ -56,7 +86,13 @@ static NSString *kSenderCellReuseIdentifier = @"senderCellReuseIdentifier";
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+- (NSMutableArray *)selectedIDArr {
+    
+    if(!_selectedIDArr){
+        _selectedIDArr = [[NSMutableArray alloc] init];
+    }
+    return _selectedIDArr;
+}
 /*
 #pragma mark - Navigation
 

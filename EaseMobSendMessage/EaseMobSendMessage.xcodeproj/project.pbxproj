@@ -15,6 +15,7 @@
 		2F48E1B02047F141009A0783 /* sender.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2F48E1AF2047F141009A0783 /* sender.txt */; };
 		2F48E1B32047F149009A0783 /* rec_group.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2F48E1B12047F149009A0783 /* rec_group.txt */; };
 		2F48E1B42047F149009A0783 /* rec_member.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2F48E1B22047F149009A0783 /* rec_member.txt */; };
+		2F48E1B82048040B009A0783 /* ChooseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F48E1B72048040B009A0783 /* ChooseTableViewCell.m */; };
 		2FAD9A112047D0B900E01426 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FAD9A102047D0B900E01426 /* AppDelegate.m */; };
 		2FAD9A142047D0B900E01426 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FAD9A132047D0B900E01426 /* MainViewController.m */; };
 		2FAD9A192047D0B900E01426 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2FAD9A182047D0B900E01426 /* Assets.xcassets */; };
@@ -35,6 +36,8 @@
 		2F48E1AF2047F141009A0783 /* sender.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sender.txt; sourceTree = "<group>"; };
 		2F48E1B12047F149009A0783 /* rec_group.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = rec_group.txt; sourceTree = "<group>"; };
 		2F48E1B22047F149009A0783 /* rec_member.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = rec_member.txt; sourceTree = "<group>"; };
+		2F48E1B62048040B009A0783 /* ChooseTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChooseTableViewCell.h; sourceTree = "<group>"; };
+		2F48E1B72048040B009A0783 /* ChooseTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChooseTableViewCell.m; sourceTree = "<group>"; };
 		2FAD9A0C2047D0B900E01426 /* EaseMobSendMessage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EaseMobSendMessage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FAD9A0F2047D0B900E01426 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2FAD9A102047D0B900E01426 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -82,6 +85,8 @@
 		2F48E1B52047FF3F009A0783 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2F48E1B62048040B009A0783 /* ChooseTableViewCell.h */,
+				2F48E1B72048040B009A0783 /* ChooseTableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -268,6 +273,7 @@
 				2F48E1A42047EBB5009A0783 /* BaseViewController.m in Sources */,
 				2FAD9A1F2047D0B900E01426 /* main.m in Sources */,
 				2F48E1AA2047EE40009A0783 /* ChooseMessageViewController.m in Sources */,
+				2F48E1B82048040B009A0783 /* ChooseTableViewCell.m in Sources */,
 				2FAD9A112047D0B900E01426 /* AppDelegate.m in Sources */,
 				2F48E1A72047EE31009A0783 /* ChooseSenderViewController.m in Sources */,
 				2F48E1AD2047EE53009A0783 /* ChooseReceiverViewController.m in Sources */,
